@@ -1,2 +1,2 @@
 #!/bin/bash
-head -14 iacta | tail +14>>iacta
+head -13 iacta | tail +13>>iacta
