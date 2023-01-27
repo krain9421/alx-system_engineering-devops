@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Bash script that that kills a process without using kill
+exit
