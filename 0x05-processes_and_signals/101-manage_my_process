@@ -9,14 +9,14 @@ start() {
 
 stop() {
 	a=$(pgrep -f ./manage_my_process)
-	kill -9 $a
+	kill -9 "$a"
 	rm /var/run/my_process.pid
 	echo "manage_my_process stopped"
 }
 
 restart() {
 	a=$(pgrep -f ./manage_my_process)
-	kill -9 $a
+	kill -9 "$a"
 	rm /var/run/my_process.pid
 	./manage_my_process &
 	echo $$ > /var/run/my_process.pid

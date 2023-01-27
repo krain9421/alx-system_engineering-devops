@@ -2,5 +2,5 @@
 # Bash script that that displays To infinity and beyond indefinitely and I am invincible!!! when receiving a SIGTERM signal 
 a=$(pgrep -f ./manage_my_process)
 echo "Killing process $a"
-kill -9 $a
+kill -9 "$a"
 
