@@ -3,6 +3,6 @@
 while :
 do
 	echo "To infinity and beyond"
-	trap "I am invincible!!!" TERM
+	trap "echo 'Im invincible!!!'" TERM
 	sleep 2
 done
