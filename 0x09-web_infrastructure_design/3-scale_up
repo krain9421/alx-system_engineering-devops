@@ -1,0 +1,7 @@
+			Explanations
+1. For every additional element, why are we adding it:
+Adding the new server has allowed us to separate each component
+into individual servers.
+An additonal load balancer to help manage more network traffic.
+
+https://drive.google.com/file/d/12d3i0QsTHdLPYSsaFgkxPTbgw-R_S9Kv/view?usp=sharing
