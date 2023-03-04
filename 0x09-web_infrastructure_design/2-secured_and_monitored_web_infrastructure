@@ -1,5 +1,5 @@
 			Explanations
-1. 1. For every additional element, why are adding it:
+1. 1. For every additional element, why are we adding it:
 A firewall is added for each server to protect from attacks and exploits.
 A SSL certificate is added to server 8.8.8.8 (www.foobar.com) over HTTPS.
 Three monitoring clients have been added to collect logs and send them to
