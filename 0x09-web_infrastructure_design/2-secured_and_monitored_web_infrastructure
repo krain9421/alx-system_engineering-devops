@@ -1,1 +1,44 @@
+			Explanations
+1. 1. For every additional element, why are adding it:
+A firewall is added for each server to protect from attacks and exploits.
+A SSL certificate is added to server 8.8.8.8 (www.foobar.com) over HTTPS.
+Three monitoring clients have been added to collect logs and send them to
+Sumologic.
+
+2. What are firewalls for:
+A firewall is a network security system that monitors and controls
+network traffic based on predetermined security rules.
+It serves as a barrier between a trusted and untrusted network.
+
+3. Why is the traffic served over HTTPS:
+Traffic passed over HTTP is transfered in plain text, while HTTPS
+encrypts the data and secures it.
+
+4. What monitoring is used for:
+It provides the capability to detect and diagnose any web
+application performance issues.
+
+5. How the monitoring tool is collecting data:
+Logs are automatically produced and time-stamed with events related
+to a particular server. In this infrastructure, all logs of the
+application server are collected.
+
+6. Explain what to do if you want to monitor your web server QPS:
+To monitor the server from the network and application level
+
+			Issues
+1. Why terminating SSL at the load balancer level is an issue:
+The data passing across the network from the load balancer to the
+App Server are now unencrypted, and that will leave applications
+vulnerable to Man-in-the-Middle Attack (MITM).
+
+2. Why having only one MySQL server capable of accepting writes is an issue:
+If that MySQL server develops issues, it would mean that data can't
+be update and this will cause problems in web applications.
+
+3.Why having servers with all the same components (database, web server and
+application server) might be a problem:
+An issue with one component in one sever will affect all other servers.
+
+
 https://drive.google.com/file/d/1atJwMkbaA8xXEDDyxAFy0s9SzCy5EFyN/view
