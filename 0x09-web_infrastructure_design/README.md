@@ -6,3 +6,5 @@ Web Server
 Network basics
 Load balancer
 Server
+
+Screenshots are at the bottom of the files.
