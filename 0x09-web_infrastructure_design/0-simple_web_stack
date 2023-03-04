@@ -1,1 +1,43 @@
+			Explanations
+1. What is a server
+A server is a device, a virtual device or software program which provides
+functionality for other programs or devices, called “clients”.
+
+2. What is the role of a domain name
+A domain name serves to identify Internet resources with a text-based label
+that is easier to memorize than numerical addresses (IP addresses).
+
+3. What type of DNS record www is in www.foobar.com
+CNAME record.
+
+4. What is the role of the Web Server
+The role of a Web Server is to store, process and display website contents 
+and deliver web pages to users.
+
+5. What is the role of the application server
+The role of the application server is to generate dynamic contents
+by executing server-side code.
+
+6. What is the role of the database
+It is a collection of information that is stored and organized so that
+it can be easily accessed, updated and managed.
+
+7. What is the server using to communicate with the computer of the user requesting
+the website
+The server communicates through the HTTP protocol.
+
+			Issues
+1. SPOF
+A single point of failure is a part of a system that, if it fails,
+will stop the entire system from working.
+
+2. Downtime when maintenance is needed.
+Since the server is using only one code base, there might be long periods of
+downtime. Users will not be able to access the website.
+
+3. Cannot scale if too much incoming traffic
+The infrastructure lacks a load balancer which helps to handle increase loads.
+There will be issues if a high volume of users try to access the website which
+would lead to poor user experience.
+
 https://drive.google.com/file/d/13-7V8j7QpclKDAE6_PhCvLkShGWUYqGu/view?usp=share_link
