@@ -4,7 +4,7 @@
 # 	Must use the exec resource
 # 	Must use pkill
 
-exec {'pkill':
+exec {'killmenow':
   command =>  'pkill killmenow',
-  cwd     =>  '/usr/bin/bash',
+  path    =>  '/usr/bin',
 }
