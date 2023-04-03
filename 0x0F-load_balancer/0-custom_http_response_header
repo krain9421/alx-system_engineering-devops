@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Script that configures Nginx so that its HTTP response
+#  contains a custom header
+
+#  The name of the custom HTTP header must be `X-Served-By`
+#  The value of the custom HTTP header must be the hostname
+#    of the server Nginx is running on
+
+sudo apt-get -y install nginx
+NAME="X-Served-By"
+VALUE=$(hostname)
+CONF_PATH="/etc/nginx/nginx.conf"
+sudo sed -i "/server {/a\\\tadd_header $NAME \"$VALUE\";" $CONF_PATH
+sudo /etc/init.d/nginx restart
