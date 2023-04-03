@@ -9,6 +9,6 @@
 sudo apt-get -y install nginx
 NAME="X-Served-By"
 VALUE=$(hostname)
-CONF_PATH="/etc/nginx/nginx.conf"
+CONF_PATH="/etc/nginx/sites-enabled/default"
 sudo sed -i "/server {/a\\\tadd_header $NAME \"$VALUE\";" $CONF_PATH
 sudo /etc/init.d/nginx restart

@@ -1,1 +1,8 @@
-ubuntu-focal
+# This file imitates a Nginx configuration file
+# This file is only for testing purposes
+# sed command should add entry to 'server' block
+
+server {
+	add_header X-Served-By "web-0x";
+
+}
