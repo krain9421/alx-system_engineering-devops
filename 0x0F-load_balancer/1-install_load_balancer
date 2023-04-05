@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+# Installs and configures HAProxy on an Ubuntu machine
+
+# Install HAProxy
+sudo apt-get -y install --no-install-recommends software-properties-common
+sudo add-apt-repository -y ppa:vbernat/haproxy-2.7
+sudo apt-get -y install haproxy=2.7.\*
+
+# Define the IP addresses and ports of the web servers
+WEB_01_IP="54.236.53.229"
+WEB_01_PORT="80"
+WEB_02_IP="18.204.7.180"
+WEB_02_IP="80"
+export WEB_01_IP WEB_01_PORT WEB_02_IP WEB_02_PORT
+
+# Add the configuration to the HAProxy configuration file
+sudo bash -c "echo -e '\nbackend web_servers\n\tbalance roundrobin\n\tserver web-01 $WEB_01_IP:$WEB_01_PORT check\n\tserver web-02 $WEB_02_IP:$WEB_02_PORT check' >> /etc/haproxy/haproxy.cfg"
+
+# Restart HAProxy to apply the changes
+if [[ -x /usr/bin/systemctl ]]; then
+	# Use systemctl on systems that use systemd
+	sudo systemctl restart haproxy
+
+else
+	# Use service on systems that use SysV init or Upstart
+	sudo service haproxy restart
+fi
