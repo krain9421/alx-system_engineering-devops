@@ -7,4 +7,4 @@
 sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 
 # Restarting Nginx to save changes
-sudo service nginx restart
+nginx
