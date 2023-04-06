@@ -10,5 +10,11 @@ sudo service nginx start
 sudo sed -i '/server {/a \ \ \ \ listen 80;' "$CONFIG1"
 sudo sed -i '/server {/a \ \ \ \ listen 80;' "$CONFIG2"
 
+# Configure firewall to allow incoming connection on port 80
+sudo ufw allow 80/tcp
+
+# Resart the firewall
+sudo ufw reload
+
 # Restart the Nginx server
 sudo service nginx restart
