@@ -16,3 +16,4 @@ sudo sed -i '/server {/a \ \ \ \ listen 80;' "$CONFIG1"
 
 # Restart the Nginx server
 # sudo /etc/init.d/nginx restart
+sudo systemctl restart nginx
