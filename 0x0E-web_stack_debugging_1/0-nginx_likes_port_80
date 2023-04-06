@@ -9,4 +9,5 @@ CONFIG2="/etc/nginx/nginx.conf"
 sudo sed -i '/server {/a \ \ \ \ listen 80 default_server;' "$CONFIG1"
 sudo sed -i '/server {/a \ \ \ \ listen [::]:80 default_server;' "$CONFIG1"
 sudo sed -i '/http {/a \ \ \ \ include /etc/nginx/sites-enabled/*;' "$CONFIG2"
-sudo service nginx restart
+sudo ufw allow 80/tcp
+sudo service nginx start
