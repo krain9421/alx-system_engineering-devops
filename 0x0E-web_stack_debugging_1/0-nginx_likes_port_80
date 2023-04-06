@@ -4,7 +4,7 @@
 CONFIG1="/etc/nginx/sites-enabled/default"
 
 # Making changes to the configuration file
-sed -i 's/8080/80/g' "$CONFIG1"
+sed -i 's/8080/80/g' $CONFIG1
 
 # Restarting Nginx to save changes
 sudo service nginx restart
