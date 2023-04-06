@@ -3,8 +3,8 @@
 
 CONFIG1="/etc/nginx/sites-available/default"
 # CONFIG2="/etc/nginx/sites-enabled/default"
-
+sudo /etc/init.d/nginx start
 # Add a listen directive within the server blocks of the files
-sudo sed -i '/server {/a \ \ \ \ listen 70 default_server;' "$CONFIG1"
-sudo sed -i '/server {/a \ \ \ \ listen [::]:70 default_server;' "$CONFIG1"
+sudo sed -i '/server {/a \ \ \ \ listen 80 default_server;' "$CONFIG1"
+sudo sed -i '/server {/a \ \ \ \ listen [::]:80 default_server;' "$CONFIG1"
 sudo /etc/init.d/nginx restart
