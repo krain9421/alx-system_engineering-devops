@@ -1,16 +1,8 @@
 #!/usr/bin/env bash
 # Configuring Apache Server in container
 
-# Install sudo
-# apt-get install -y sudo
-
-# Installing Apache
-sudo apt -y update
-sudo apt install -y apache2
-
-# Adjusting the Firewall
-# sudo apt-get install -y ufw
-sudo ufw allow 'Apache'
-
 # Modify the index page
-sudo bash -c 'echo "Hello World!" > /var/www/html/index.html'
+sudo bash -c 'echo "Hello Holberton" > /var/www/html/index.html'
+
+# Start the Apache service
+service apache2 start
