@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 # Fix the Nginx to listen on port 80 of all the server's active IPv4 IPs
 
-CONFIG1="/etc/nginx/sites-available/default"
-# CONFIG2="/etc/nginx/sites-enabled/default"
-sudo /etc/init.d/nginx start
-# Add a listen directive within the server blocks of the files
+CONFIG1="/etc/nginx/sites-enabled/default"
+CONFIG2="/etc/nginx/nginx.conf"
+
+
+# Add a listen directive within the server blocks of the config files
 sudo sed -i '/server {/a \ \ \ \ listen 80 default_server;' "$CONFIG1"
 sudo sed -i '/server {/a \ \ \ \ listen [::]:80 default_server;' "$CONFIG1"
-sudo /etc/init.d/nginx restart
+sudo sed -i '/http {/a \ \ \ \ include /etc/nginx/sites-enabled/*;' "$CONFIG2"
+sudo service nginx restart
