@@ -15,4 +15,4 @@ sudo ufw allow 80/tcp
 sudo ufw reload
 
 # Restart the Nginx server
-sudo service nginx start
+sudo /etc/init.d/nginx restart
