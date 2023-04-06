@@ -5,7 +5,7 @@ CONFIG1="/etc/nginx/sites-available/default"
 # CONFIG2="/etc/nginx/sites-enabled/default"
 
 # Add a listen directive within the server blocks of the files
-sudo sed -i '/server {/a \ \ \ \ listen 80;' "$CONFIG1"
+# sudo sed -i '/server {/a \ \ \ \ listen 80;' "$CONFIG1"
 # sudo sed -i '/server {/a \ \ \ \ listen 80;' "$CONFIG2"
 
 # Configure firewall to allow incoming connection on port 80
