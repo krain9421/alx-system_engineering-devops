@@ -1,0 +1,5 @@
+# This is a mock configuration file with a single empty server block
+server {
+    listen 80;
+	# Write your directives in this block
+}
