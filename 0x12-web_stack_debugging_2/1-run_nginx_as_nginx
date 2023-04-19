@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 # RUnning Nginx as user `nginx`
 
-# Making sure Nginx config has the right permissions
+# Making sure `nginx.conf` has the right permissions
 sudo chmod 644 /etc/nginx/nginx.conf
 # Setting Nginx to run on user nginx
 sudo -u nginx /usr/sbin/nginx
+# Linking the Nginx config files
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 # Configuring Nginx to listen on port 8080
 sudo sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
 # Restarting nginx
