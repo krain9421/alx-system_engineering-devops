@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 # RUnning Nginx as user `nginx`
+
+# Stopping Nginx
+sudo nginx -s stop
+# Making sure Nginx config has the right permissions
+sudo chmod 644 /etc/nginx/nginx.conf
+# Setting Nginx to run on user nginx
 sudo -u nginx /usr/sbin/nginx
+# Configuring Nginx to listen on port 8080
 sudo sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
-sudo service nginx restart
+# Restarting nginx
+sudo nginx -s restart
