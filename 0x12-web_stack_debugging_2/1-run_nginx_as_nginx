@@ -2,4 +2,4 @@
 # RUnning Nginx as user `nginx`
 sudo -u nginx /usr/sbin/nginx
 sudo sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
-sudo systemctl reload nginx
+sudo service nginx restart
