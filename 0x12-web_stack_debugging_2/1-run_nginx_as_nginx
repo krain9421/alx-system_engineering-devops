@@ -10,5 +10,5 @@ sudo -u nginx /usr/sbin/nginx
 # Configuring Nginx to listen on port 8080
 sudo sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
 # Restarting nginx
-# pkill apache2
+pkill apache2
 sudo -u nginx service nginx start
