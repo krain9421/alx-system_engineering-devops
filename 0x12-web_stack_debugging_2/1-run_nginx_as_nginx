@@ -4,11 +4,11 @@
 # Making sure `nginx.conf` has the right permissions
 sudo chmod 644 /etc/nginx/nginx.conf
 # Setting Nginx to run on user nginx
-sudo -u nginx /usr/sbin/nginx
+# sudo -u nginx /usr/sbin/nginx
 # Modifying the nginx config file
 sudo sed -i 's/#user www-data/user nginx/' /etc/nginx/nginx.conf
 # Configuring Nginx to listen on port 8080
 sudo sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
 # Restarting nginx
 pkill apache2
-sudo nginx -s restart
+sudo -u nginx service nginx start
