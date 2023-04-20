@@ -10,4 +10,4 @@ sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 # Configuring Nginx to listen on port 8080
 sudo sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
 # Restarting nginx
-service nginx restart
+sudo -u nginx service nginx start
