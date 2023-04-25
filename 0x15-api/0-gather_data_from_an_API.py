@@ -27,7 +27,7 @@ if __name__ == "__main__":
             TITLE.append(todo.get("title"))
 
     print("Employee {} is done with tasks({}/{}):".format(NAME, DONE, TOTAL))
-    
+
     # Displaying the completed tasks
     for task in TITLE:
-        print("\t{}".format(task))
+        print("\t {}".format(task))
