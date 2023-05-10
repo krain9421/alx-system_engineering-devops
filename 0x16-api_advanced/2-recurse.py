@@ -18,14 +18,14 @@ def recurse(subreddit, hot_list=[]):
     response = requests.get(api_url, headers=headers)
 
     # Check if the subreddit is valid
-    if response.status_code == 200:
-        for item in response.json().get('data').get('children'):
-            hot_list.append(item['data']['title'])
+    if response.status_code == 404:
+        return None
 
-        after = response.json().get('data').get('after')
-        if after is None:
-            return hot_list
+    for item in response.json().get('data').get('children'):
+        hot_list.append(item['data']['title'])
 
-        return recurse(subreddit, hot_list=hot_list)
-    else:
-        print(None)
+    after = response.json().get('data').get('after')
+    if after is None:
+        return hot_list
+
+    return recurse(subreddit, hot_list=hot_list)
