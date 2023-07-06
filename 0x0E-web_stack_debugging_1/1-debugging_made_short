@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-# Short method of setting Nginx port to 8080
-sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
-sudo service nginx restart
-kill -SIGKILL "$(cat /var/run/nginx.pid)"
