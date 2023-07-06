@@ -8,4 +8,4 @@ sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 
 # Restart Nginx
-service nginx restart
+sudo systemctl restart nginx
