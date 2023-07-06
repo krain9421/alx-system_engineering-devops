@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Bash script that will display information about subdomains
+
+print_dig2 () {
+	RECORD=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | sed -r "s/;; ANSWER SECTION://g" | awk 'NR==2 {print $4}')
+	DEST=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | sed -r "s/;; ANSWER SECTION://g" | awk 'NR==2 {print $5}')
+	SUB=$2
+
+	echo "The subdomain $SUB is a $RECORD record and points to $DEST"
+}
+
+if [ "$#" -eq 2 ]
+then
+	print_dig2 "$1" "$2"
+else
+	print_dig2 "$1" "www"
+	print_dig2 "$1" "lb-01"
+	print_dig2 "$1" "web-01"
+	print_dig2 "$1" "web-02"
+fi
