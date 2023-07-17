@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Script that runs the `whoami` command on the user argument
-echo "$1"
