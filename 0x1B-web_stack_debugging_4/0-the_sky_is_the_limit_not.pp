@@ -2,15 +2,15 @@
 
 exec { 'sed':
   path    => 'usr/bin:/bin',
-  command => 'sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 4096\"/g" /etc/default/nginx',
+  command => 'sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 30000\"/g" /etc/default/nginx',
   returns => [0,1],
 }
 
-exec { 'sed2':
-  path    => 'usr/bin:/bin',
-  command => 'sed -i "s/pid \/run\/nginx.pid;/pid \/run\/nginx.pid;\tworker_rlimit_nofile 4096;/g" /etc/nginx/nginx.conf',
-  returns => [0,1],
-}
+#exec { 'sed2':
+#  path    => 'usr/bin:/bin',
+#  command => 'sed -i "s/pid \/run\/nginx.pid;/pid \/run\/nginx.pid;\tworker_rlimit_nofile 4096;/g" /etc/nginx/nginx.conf',
+#  returns => [0,1],
+#}
 
 exec { 'service':
   path    => 'usr/bin:/bin',
