@@ -3,7 +3,6 @@
 exec { 'sed':
   path    => 'usr/bin:/bin',
   command => 'sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 30000\"/g" /etc/default/nginx && service nginx restart',
-  returns => 1,
 }
 #exec { 'sed2':
 #  path    => 'usr/bin:/bin',
