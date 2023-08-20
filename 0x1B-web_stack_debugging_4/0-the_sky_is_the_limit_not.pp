@@ -6,11 +6,11 @@ exec { 'sed':
   returns => [0,1],
 }
 
-#exec { 'sed2':
-#  path    => 'usr/bin:/bin',
-#  command => 'sed -i "s/pid \/run\/nginx.pid;/pid \/run\/nginx.pid;\tworker_rlimit_nofile 4096;/g" /etc/nginx/nginx.conf',
-#  returns => [0,1],
-#}
+exec { 'sed2':
+  path    => 'usr/bin:/bin',
+  command => 'sed -i "s/pid \/run\/nginx.pid;/pid \/run\/nginx.pid;\nworker_rlimit_nofile 4096;/g" /etc/nginx/nginx.conf',
+  returns => [0,1],
+}
 
 exec { 'service':
   path    => 'usr/bin:/bin',
