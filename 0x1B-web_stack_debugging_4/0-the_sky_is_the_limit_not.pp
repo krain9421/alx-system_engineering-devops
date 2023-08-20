@@ -2,7 +2,7 @@
 
 exec { 'sed':
   path    => 'usr/bin:/bin',
-  command => 'sed -i "s/ULIMIT=/"-n 15/"/ULIMIT=/"-n 4096/"/g" /etc/default/nginx',
+  command => 'sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 4096\"/g" /etc/default/nginx',
   returns => [0,1],
 }
 
